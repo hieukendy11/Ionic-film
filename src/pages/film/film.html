@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{type}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="card-background-page">
+  <ion-list *ngFor="let film of films">
+    <ion-card>
+      <img [src]="film.imagelink"/>
+      <div class="card-title">{{film.title}}</div>
+      <div class="card-subtitle">{{film.subtitle}}</div>
+    </ion-card>
+    <ion-card-content>
+      <p>{{film.infor}}</p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="eye"></ion-icon>
+          <div>{{film.view}}</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="star-half"></ion-icon>
+          <div>{{film.rate}}/10</div>
+        </button>
+      </ion-col>
+
+    </ion-row>
+  </ion-list>
+
+</ion-content>
